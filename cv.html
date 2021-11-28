@@ -1,0 +1,80 @@
+html:
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="cv.css">
+        <script src="CV.js"></script>
+
+        
+    </head>
+<body onload= "play()">
+  <h1> Stop-Motion</h1>
+  <img id="HelloAnim" src="1.jpg"Stop-Motion" width="35%" ><br>
+  <button onclick="play()"> PLAY </button> 
+
+    <div id = "GridContainer">
+        <div id= "item1"> Roee Gur CV</div>
+        <div id= "item2">Languages</div>
+        <div id= "item3">Work History</div>
+    </div>
+
+    <style> 
+        div {
+          width: 100%;
+          height: 33vh;
+          background-color: rgb(243, 77, 77);
+          animation-name: example;
+          animation-duration: 4s;
+        }
+        
+        @keyframes example {
+          from {background-color: rgb(229, 253, 94);}
+          to {background-color: rgb(199, 223, 180);}
+        }
+        </style>
+
+
+<h2>Registration form</h2>
+<label id= "Noa" for="fname">First name:</label><br>
+<input type="text" id="fname" name="fname"><br>
+<label for="lname">Last name:</label><br>
+<input type="text" id="lname" name="lname"><br><br>
+
+<label for="CustomerMail">Customer mail:</label><br>
+<input type="email" id="CustomerMail" name="CustomerMail"><br><br>
+
+<label for="CustomerID">Customer ID:</label><br>
+<input type="number" id="CustomerID" name="CustomerID"><br><br>
+<input type="submit" value="Submit">
+
+<h2>Gelocation:</h2>
+
+<p>Click the button to get your coordinates.</p>
+
+<button onclick="getLocation()">Try It</button>
+
+<p id="demo"></p>
+
+<script>
+const x = document.getElementById("demo");
+
+function getLocation() {
+  try {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } catch {
+    x.innerHTML = err;
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+</script>
+
+
+
+
+</body>
+</html>

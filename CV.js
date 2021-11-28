@@ -1,6 +1,31 @@
 
- //זה מחוץ לפונקציה לכן אם זה תקין זה אמור להדפיס ברגע שטוענים את הדפדפן
-  //כדי לדבג נדפיס בקונוסול ונפתח על ידי  ctrl+shift+j
-//== זה אומר בוליאני;
-  var Z = ("Roee") 
+ var Z = ("Roee") 
   console.log(Z);
+
+  var imgs = [
+    "1.jpg",
+    "2.jpg",
+    "1.jpg",
+    "2.jpg",
+    "1.jpg",
+    "2.jpg",
+    "1.jpg",
+    "2.jpg",
+    
+];
+
+  var i=0;
+
+function play() { //my loop
+    console.log("I'm in");
+    setTimeout( ()=> {
+        document.getElementById("HelloAnim").src=imgs[i];
+        i++;
+        if( i< imgs.length) { //תנאי של הרקורסיה
+            play();
+        }
+        else{
+          i=0;  
+        } 
+    }, 500);
+}
